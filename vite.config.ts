@@ -2,9 +2,30 @@ import { defineConfig } from 'vite'
 import { resolve } from 'path'
 import vue from '@vitejs/plugin-vue'
 
+function pathResolve(dir: string) {
+  return resolve(process.cwd(), '.', dir);
+}
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
+	resolve: {
+		alias: [
+			{
+				find: /\/#\//,
+				replacement: pathResolve('types') + '/',
+			},
+			{
+				find: '@p',
+				replacement: pathResolve('packages') + '/',
+			},
+			{
+				find: '@e',
+				replacement: pathResolve('example') + '/',
+			},
+		],
+		dedupe: ['vue'],
+	},
   build: {
 		outDir: 'lib',
 		lib: {
