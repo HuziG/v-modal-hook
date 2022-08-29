@@ -1,18 +1,36 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "useDefineForClassFields": true,
+    "baseUrl": ".",
     "module": "ESNext",
-    "moduleResolution": "Node",
-    "strict": true,
+    "target": "esnext",
+    "lib": ["DOM", "ESNext"],
+    "types": ["vite/client"],
     "jsx": "preserve",
-    "sourceMap": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
+    "strict": true,
     "esModuleInterop": true,
-    "lib": ["ESNext", "DOM"],
-    "skipLibCheck": true
+    "incremental": false,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "noUnusedLocals": true,
+    "strictNullChecks": true,
+    "declaration": true,
+    "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "@/*": ["packages/*"],
+      "./*": ["./*"],
+      "v-modal-hook": ["packages/index.ts"]
+    }
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": [
+    "packages/**/*",
+    "playground/**/*",
+    "docs/**/*",
+    "types",
+    "*.ts",
+    "*.tsx",
+    "*.vue",
+    "*.d.ts",
+    "*.md"
+  ]
 }
