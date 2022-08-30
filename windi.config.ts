@@ -1,7 +1,7 @@
-import { defineConfig } from "windicss/helpers";
+import { defineConfig } from 'windicss/helpers'
 
 export default defineConfig({
-  darkMode: "class",
+  darkMode: 'class',
   // https://windicss.org/posts/v30.html#attributify-mode
   attributify: false,
   plugins: [],
@@ -9,9 +9,9 @@ export default defineConfig({
   // 基于 windicss 的基础工具类，自定义组合成自己需要的类
   shortcuts: {
     // 单个标签自定义类名
-    "flex-center": "flex items-center justify-center",
-    "flex-center-x": "flex justify-center",
-    "flex-center-y": "flex items-center",
+    'flex-center': 'flex items-center justify-center',
+    'flex-center-x': 'flex justify-center',
+    'flex-center-y': 'flex items-center',
     // 嵌套标签自定义类名
     // 示例
     // "custom-title": {
@@ -25,7 +25,7 @@ export default defineConfig({
     // }
   },
   extract: {
-    include: ["playground/**/*.{vue,html,jsx,tsx}"],
-    exclude: ["node_modules", ".git"],
+    include: ['playground/**/*.{vue,html,jsx,tsx}'],
+    exclude: ['node_modules', '.git'],
   },
-});
+})

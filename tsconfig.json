@@ -19,7 +19,7 @@
     "paths": {
       "@/*": ["packages/*"],
       "./*": ["./*"],
-      "v-modal-hook": ["packages/index.ts"]
+      "codemirror-editor-vue3": ["packages/index.ts"]
     }
   },
   "include": [
@@ -32,5 +32,6 @@
     "*.vue",
     "*.d.ts",
     "*.md"
-  ]
+  ],
+  "exclude": ["dist", "node_modules"]
 }

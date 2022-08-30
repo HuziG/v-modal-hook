@@ -1,8 +1,10 @@
-import { createApp } from "vue";
-import App from "./App.vue";
-import router from "./router/index";
-import "virtual:windi.css";
+import { createApp } from 'vue'
+import App from './App.vue'
+import { setupNaive } from './plugins/naiveui'
+import 'virtual:windi.css'
 
-const app = createApp(App);
-app.use(router);
-app.mount("#app");
+const app = createApp(App)
+
+setupNaive(app)
+
+app.mount('#app')

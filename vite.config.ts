@@ -1,15 +1,18 @@
-import { defineConfig } from "vite";
-import { resolve } from "path";
-
-import plugins from "./build/plugins";
+import { resolve } from 'path'
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import AutoImport from 'unplugin-auto-import/vite'
+import dts from 'vite-plugin-dts'
+import WindiCSS from 'vite-plugin-windicss'
 
 function pathResolve(dir: string) {
-  return resolve(process.cwd(), ".", dir);
+  return resolve(process.cwd(), '.', dir)
 }
 
-const viteCfg = defineConfig({
+// https://vitejs.dev/config/
+export default defineConfig({
   server: {
-    host: "::",
+    host: '::',
     open: true,
     https: false,
     port: 3008,
@@ -18,38 +21,48 @@ const viteCfg = defineConfig({
     alias: [
       {
         find: /@\//,
-        replacement: `${pathResolve("packages/")}/`,
+        replacement: `${pathResolve('packages/')}/`,
       },
       {
-        find: "v-modal-hook",
-        replacement: `${pathResolve("packages/index.ts")}`,
+        find: 'v-modal-hook',
+        replacement: `${pathResolve('packages/index.ts')}`,
       },
     ],
   },
-  // 生产环境路径，类似webpack的assetsPath
   build: {
-    minify: "esbuild",
+    minify: 'esbuild',
     lib: {
-      formats: ["umd", "es"],
-      entry: resolve(__dirname, "packages/index.ts"),
-      name: "v-modal-hook",
+      formats: ['umd', 'es'],
+      entry: resolve(__dirname, 'packages/index.ts'),
+      name: 'v-modal-hook',
     },
     rollupOptions: {
       output: {
-        name: "v-modal-hook", // 仓库或组件的名字
+        name: 'v-modal-hook', // 仓库或组件的名字
         // 在 UMD 构建模式下为这些外部化的依赖提供一个全局变量
         globals: {
-          vue: "Vue",
+          vue: 'Vue',
         },
       },
 
       // 确保外部化处理那些你不想打包进库的依赖
       external: [
-        "vue",
+        'vue',
       ],
     },
   },
-  plugins,
-});
-
-export default viteCfg;
+  plugins: [
+    vue(),
+    dts(),
+    AutoImport({
+      dts: './types/auto-imports.d.ts',
+      imports: ['vue', 'vue-router'],
+      eslintrc: {
+        enabled: true, // Default `false`
+        filepath: './.eslintrc-auto-import.json', // Default `./.eslintrc-auto-import.json`
+        globalsPropValue: true, // Default `true`, (true | false | 'readonly' | 'readable' | 'writable' | 'writeable')
+      },
+    }),
+    WindiCSS(),
+  ],
+})

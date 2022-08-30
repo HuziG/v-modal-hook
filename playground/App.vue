@@ -1,13 +1,15 @@
+<script lang="ts" setup>
+</script>
+
 <template>
-  <div>
-    <!-- hello -->
-    <router-view></router-view>
+  <div class="flex items-center justify-center my-5">
+    <n-button type="primary">
+      add
+    </n-button>
   </div>
 </template>
 
-<script lang="ts" setup></script>
-
-<style lang="less">
+<style>
 body,
 html {
   background-color: #333333;

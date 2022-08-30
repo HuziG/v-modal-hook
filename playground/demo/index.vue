@@ -1,7 +1,13 @@
-<script lang="ts"></script>
+<script lang="ts">
+
+</script>
 
 <template>
-  <div>demo</div>
+  <div>
+    <n-button type="primary">
+      hello
+    </n-button>
+  </div>
 </template>
 
-<style lang="less"></style>
+<style></style>
