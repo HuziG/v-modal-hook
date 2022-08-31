@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+  import ModalHook from 'v-modal-hook'
 </script>
 
 <template>
