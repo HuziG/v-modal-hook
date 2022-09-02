@@ -1,16 +1,20 @@
 import {
-  create,
+  NButton,
+  NButtonGroup,
   NModal,
-  NButton
-} from 'naive-ui';
+  NSpace,
+  create,
+} from 'naive-ui'
 
 const naive = create({
   components: [
     NModal,
-    NButton
+    NButton,
+    NButtonGroup,
+    NSpace,
   ],
-});
+})
 
-export function setupNaive(app) {
-  app.use(naive);
+export function setupNaive(app: any) {
+  app.use(naive)
 }

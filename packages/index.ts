@@ -1,7 +1,6 @@
-import ModalHook from './Modal'
-
-// 按需引入
-export { ModalHook }
+import ModalHook from './Modal/src/basicModal.vue'
+export { useModal } from './Modal/src/hooks/useModal'
+export * from './Modal/src/type'
 
 const components = [ModalHook]
 
@@ -14,3 +13,4 @@ const install = (App: any) => {
 export default {
   install,
 }
+

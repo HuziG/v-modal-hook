@@ -1,8 +1,6 @@
+import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import AutoImport from 'unplugin-auto-import/vite'
-import dts from 'vite-plugin-dts'
 import WindiCSS from 'vite-plugin-windicss'
 
 function pathResolve(dir: string) {
@@ -53,16 +51,6 @@ export default defineConfig({
   },
   plugins: [
     vue(),
-    dts(),
-    AutoImport({
-      dts: './types/auto-imports.d.ts',
-      imports: ['vue', 'vue-router'],
-      eslintrc: {
-        enabled: true, // Default `false`
-        filepath: './.eslintrc-auto-import.json', // Default `./.eslintrc-auto-import.json`
-        globalsPropValue: true, // Default `true`, (true | false | 'readonly' | 'readable' | 'writable' | 'writeable')
-      },
-    }),
     WindiCSS(),
   ],
 })

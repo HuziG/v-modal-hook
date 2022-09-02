@@ -1,19 +1,20 @@
 <script lang="ts" setup>
-  import ModalHook from 'v-modal-hook'
+import { NMessageProvider } from 'naive-ui'
+import PowerExample from './components/PowerExample.vue'
+import SlotExample from './components/SlotExample.vue'
 </script>
 
 <template>
-  <div class="flex items-center justify-center my-5">
-    <n-button type="primary">
-      add
-    </n-button>
-  </div>
+  <NMessageProvider>
+    <PowerExample />
+    <SlotExample />
+  </NMessageProvider>
 </template>
 
 <style>
-body,
-html {
-  background-color: #333333;
-  color: #ffffff;
-}
+  body,
+  html {
+    background-color: #333333;
+    color: #ffffff;
+  }
 </style>

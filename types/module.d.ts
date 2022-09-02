@@ -10,6 +10,11 @@ declare module "virtual:*" {
   export default result;
 }
 
+declare module "v-modal-hook" {
+  const result: any;
+  export default result;
+}
+
 declare module "*.less" {
   const content: any;
   export default content;

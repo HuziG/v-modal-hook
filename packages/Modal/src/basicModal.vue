@@ -9,6 +9,7 @@ import {
   unref,
   useAttrs,
 } from 'vue'
+import { NSpace } from 'naive-ui'
 import { basicProps } from './props'
 import type { ModalMethods, ModalProps } from './type'
 import type { FormProps } from './type/form'
@@ -83,7 +84,6 @@ function onCloseModal() {
 
 function handleSubmit() {
   subLoading.value = true
-  console.log(subLoading.value)
   emit('on-ok')
 }
 
@@ -117,7 +117,7 @@ if (instance)
       <slot name="default" />
     </template>
     <template v-if="!$slots.action" #action>
-      <n-space>
+      <NSpace>
         <n-button @click="closeModal">
           取消
         </n-button>
@@ -129,7 +129,7 @@ if (instance)
         >
           {{ subBtuText }}
         </n-button>
-      </n-space>
+      </NSpace>
     </template>
     <template v-else #action>
       <n-spin :show="modalLoading">
@@ -139,7 +139,7 @@ if (instance)
   </n-modal>
 </template>
 
-<style lang="less">
+<style>
 .cursor-move {
   cursor: move;
 }
