@@ -23,7 +23,10 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "vue": "^3.2.37"
+    "@highlightjs/vue-plugin": "^2.1.0",
+    "highlight.js": "^11.6.0",
+    "vue": "^3.2.37",
+    "vue-highlightjs": "^1.3.3"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.26.2",

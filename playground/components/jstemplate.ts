@@ -1,13 +1,13 @@
-<script lang="ts" setup>
+export const PowerExampleCode = `<script lang="ts" setup>
 import { useMessage } from 'naive-ui'
 import { useModal } from 'v-modal-hook'
-import { PowerExampleCode } from './jstemplate'
 
 const message = useMessage()
 
-const [register, { openModal, closeModal, setSubDisabled, setSubLoading }] = useModal({
-  title: '基本示例',
-})
+const [register, { openModal, closeModal, setSubDisabled, setSubLoading }] = 
+  useModal({
+    title: 'Modal!',
+  })
 
 const handleOk = () => {
   message.info('这是确定回调')
@@ -19,19 +19,11 @@ const handleOk = () => {
 </script>
 
 <template>
-  <div class="flex flex-col items-center justify-center mt-5">
+  <div class="flex flex-col items-center justify-center my-5">
     <div>
       <n-button type="primary" @click="openModal">
-        打开基本示例
+        Open
       </n-button>
-    </div>
-
-    <div class="my-5 w-full xl:w-1/2">
-      <div class="text-base py-2 px-5" style="background: #005883">
-        code 🌰：
-      </div>
-
-      <highlightjs language="javascript" :code="PowerExampleCode" />
     </div>
 
     <basicModal @register="register" @on-ok="handleOk">
@@ -61,7 +53,32 @@ const handleOk = () => {
     </basicModal>
   </div>
 </template>
+`
 
-<style>
+export const SlotExampleCode = `<script lang="ts" setup>
+import { useModal } from 'v-modal-hook'
 
-</style>
+const [register, { openModal }] = 
+  useModal({
+    title: 'Modal!',
+  })
+</script>
+
+<template>
+  <div class="flex items-center justify-center my-5">
+    <n-button type="primary" @click="openModal">
+      插槽Action
+    </n-button>
+
+    <basicModal @register="register">
+      <template #default>
+        这里是自定义内容插槽
+      </template>
+
+      <template #action>
+        这里是自定义底部插槽
+      </template>
+    </basicModal>
+  </div>
+</template>
+`

@@ -1,16 +1,20 @@
 <script lang="ts" setup>
+import { ref } from 'vue'
 import { useMessage } from 'naive-ui'
 import { useModal } from 'v-modal-hook'
 import { PowerExampleCode } from './jstemplate'
+import Form from './Form.vue'
 
 const message = useMessage()
+const formRef = ref<any>(null)
 
 const [register, { openModal, closeModal, setSubDisabled, setSubLoading }] = useModal({
-  title: '基本示例',
+  title: '表单示例',
+  style: 'width: 50%',
 })
 
 const handleOk = () => {
-  message.info('这是确定回调')
+  formRef.value.handleValidateButtonClick()
 
   setTimeout(() => {
     setSubLoading(false)
@@ -22,7 +26,7 @@ const handleOk = () => {
   <div class="flex flex-col items-center justify-center mt-5">
     <div>
       <n-button type="primary" @click="openModal">
-        打开基本示例
+        表单示例
       </n-button>
     </div>
 
@@ -35,33 +39,14 @@ const handleOk = () => {
     </div>
 
     <basicModal @register="register" @on-ok="handleOk">
-      <n-space>
-        <n-button @click="closeModal">
-          关闭弹框
-        </n-button>
-
-        <n-button-group>
-          <n-button @click="setSubDisabled(true)">
-            禁用提交按钮
-          </n-button>
-          <n-button @click="setSubDisabled(false)">
-            激活提交按钮
-          </n-button>
-        </n-button-group>
-
-        <n-button-group>
-          <n-button @click="setSubLoading(true)">
-            加载提交按钮
-          </n-button>
-          <n-button @click="setSubLoading(false)">
-            关闭加载
-          </n-button>
-        </n-button-group>
-      </n-space>
+      <template #default>
+        <Form ref="formRef" />
+      </template>
     </basicModal>
   </div>
 </template>
 
-<style>
+  <style>
 
-</style>
+  </style>
+
