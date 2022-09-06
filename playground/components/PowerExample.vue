@@ -27,7 +27,7 @@ const handleOk = () => {
     </div>
 
     <div class="my-5 w-full xl:w-1/2">
-      <div class="text-base py-2 px-5" style="background: #005883">
+      <div class="text-base py-2 px-5" style="background: #4A8479">
         index.vue
       </div>
 

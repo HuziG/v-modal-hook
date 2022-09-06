@@ -14,7 +14,7 @@ const [register, { openModal }] = useModal({
     </n-button>
 
     <div class="my-5 w-full xl:w-1/2 mt-5">
-      <div class="text-base py-2 px-5" style="background: #005883">
+      <div class="text-base py-2 px-5" style="background: #4A8479">
         index.vue
       </div>
 

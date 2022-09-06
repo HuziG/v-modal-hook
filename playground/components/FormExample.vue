@@ -6,7 +6,7 @@ import Form from './Form.vue'
 
 const formRef = ref<any>(null)
 
-const [register, { openModal, setSubLoading }] = useModal({
+const [register, { openModal, setSubLoading, setProps }] = useModal({
   title: '表单示例',
   style: 'width: 40%',
 })
@@ -21,7 +21,19 @@ const handleOk = () => {
   }, 1000)
 }
 
+const validateFormValue = () => {
+  setProps({
+    title: '表单校验',
+  })
+
+  openModal()
+}
+
 const setFormValue = async () => {
+  setProps({
+    title: '表单数据设置',
+  })
+
   const form = {
     inputValue: 'input input input',
     textareaValue: 'textarea textarea textarea',
@@ -45,16 +57,16 @@ const setFormValue = async () => {
           表单校验与设置
         </div>
         <n-space>
-          <n-button type="primary" style="width: 100px;" @click="openModal">
+          <n-button type="primary" style="width: 100px;" @click="validateFormValue">
             表单校验
           </n-button>
-          <n-button type="primary" style="width: 100px;" @click="setFormValue">
-            表单设置
+          <n-button type="primary" @click="setFormValue">
+            表单数据设置
           </n-button>
         </n-space>
       </div>
 
-      <div class="text-base py-2 px-5" style="background: #005883">
+      <div class="text-base py-2 px-5" style="background: #4A8479">
         <span class="border-r pr-5 mr-5">
           <span class="cursor-pointer hover:opacity-70 active:opacity-50" @click="exampleCode = FormExampleCode">index.vue</span>
         </span>
