@@ -11,8 +11,9 @@ declare module "virtual:*" {
 }
 
 declare module "v-modal-hook" {
-  const result: any;
-  export default result;
+  export {
+    useModal
+  };
 }
 
 declare module "*.less" {

@@ -9,13 +9,13 @@ const [register, { openModal }] = useModal({
 
 <template>
   <div class="flex flex-col items-center justify-center mt-5">
-    <n-button type="primary" @click="openModal">
+    <n-button type="primary" size="large" @click="openModal">
       插槽Action
     </n-button>
 
     <div class="my-5 w-full xl:w-1/2 mt-5">
       <div class="text-base py-2 px-5" style="background: #005883">
-        code 🌰：
+        index.vue
       </div>
 
       <highlightjs language="javascript" :code="SlotExampleCode" />

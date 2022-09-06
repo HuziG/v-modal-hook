@@ -21,14 +21,14 @@ const handleOk = () => {
 <template>
   <div class="flex flex-col items-center justify-center mt-5">
     <div>
-      <n-button type="primary" @click="openModal">
-        打开基本示例
+      <n-button type="primary" size="large" @click="openModal">
+        基本示例
       </n-button>
     </div>
 
     <div class="my-5 w-full xl:w-1/2">
       <div class="text-base py-2 px-5" style="background: #005883">
-        code 🌰：
+        index.vue
       </div>
 
       <highlightjs language="javascript" :code="PowerExampleCode" />
