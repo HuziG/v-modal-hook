@@ -19,7 +19,7 @@ const handleOk = () => {
 </script>
 
 <template>
-  <div class="flex flex-col items-center justify-center mt-5">
+  <div id="base" class="flex flex-col items-center justify-center pt-5">
     <div>
       <n-button type="primary" size="large" @click="openModal">
         基本示例

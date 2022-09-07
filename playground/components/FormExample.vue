@@ -50,7 +50,7 @@ const setFormValue = async () => {
 </script>
 
 <template>
-  <div class="flex flex-col items-center justify-center mt-5">
+  <div id="form" class="flex flex-col items-center justify-center pt-5">
     <div class="my-5 w-full xl:w-1/2">
       <div class="flex flex-col border border-dashed border-gray-200 rounded p-5 mb-5">
         <div class="text-base pb-5">
@@ -68,9 +68,15 @@ const setFormValue = async () => {
 
       <div class="text-base py-2 px-5" style="background: #4A8479">
         <span class="border-r pr-5 mr-5">
-          <span class="cursor-pointer hover:opacity-70 active:opacity-50" @click="exampleCode = FormExampleCode">index.vue</span>
+          <span
+            class="cursor-pointer hover:opacity-70 active:opacity-50"
+            @click="exampleCode = FormExampleCode"
+          >index.vue</span>
         </span>
-        <span class="cursor-pointer hover:opacity-70 active:opacity-50" @click="exampleCode = FormCode">Form.vue</span>
+        <span
+          class="cursor-pointer hover:opacity-70 active:opacity-50"
+          @click="exampleCode = FormCode"
+        >Form.vue</span>
       </div>
 
       <highlightjs language="javascript" :code="exampleCode" />

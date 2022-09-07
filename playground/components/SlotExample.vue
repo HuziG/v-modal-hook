@@ -8,7 +8,7 @@ const [register, { openModal }] = useModal({
 </script>
 
 <template>
-  <div class="flex flex-col items-center justify-center mt-5">
+  <div id="slot" class="flex flex-col items-center justify-center pt-5">
     <n-button type="primary" size="large" @click="openModal">
       插槽Action
     </n-button>
