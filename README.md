@@ -1,16 +1,56 @@
-# Vue 3 + TypeScript + Vite
+# 📺 v-modal-hook
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+- 🔥 Built with **Vue** Composition API
+- 👂 Support **naive-ui** about modal component
+- ✅ Only supports **Vue 3**
+- ✨ Built with **TypeScript**
 
-## Recommended IDE Setup
+This is demo url:[🌍 **demo**]().
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+About the npm url is here: [🌍 **demo**](https://www.npmjs.com/package/v-modal-hook).
 
-## Type Support For `.vue` Imports in TS
+## Installation
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's Take Over mode by following these steps:
+```bash
+npm install @vueuse/sound
+```
 
-1. Run `Extensions: Show Built-in Extensions` from VS Code's command palette, look for `TypeScript and JavaScript Language Features`, then right click and select `Disable (Workspace)`. By default, Take Over mode will enable itself if the default TypeScript extension is disabled.
-2. Reload the VS Code window by running `Developer: Reload Window` from the command palette.
+## Examples
 
-You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/volar/discussions/471).
+the basic modal using
+
+```js
+<script lang="ts" setup>
+import { useMessage } from 'naive-ui'
+import { useModal } from 'v-modal-hook'
+
+const message = useMessage()
+
+const [register, { openModal, closeModal, setSubDisabled, setSubLoading }] = 
+  useModal({
+    title: 'Modal!',
+  })
+
+const handleOk = () => {
+  message.info('this is ok callback')
+
+  setTimeout(() => {
+    setSubLoading(false)
+  }, 1000)
+}
+</script>
+```
+
+```html
+<div class="flex flex-col items-center justify-center my-5">
+  <div>
+    <n-button type="primary" @click="openModal">
+      Open
+    </n-button>
+  </div>
+
+  <basicModal @register="register" @on-ok="handleOk">
+    this is modal content
+  </basicModal>
+</div>
+```

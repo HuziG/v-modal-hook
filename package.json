@@ -1,23 +1,24 @@
 {
   "name": "v-modal-hook",
   "type": "module",
-  "version": "0.0.0",
-  "private": true,
+  "version": "1.0.0",
+  "private": false,
   "description": "through modal to use modal",
   "author": {
-    "name": "",
-    "email": ""
+    "name": "zhangxiaoxuan",
+    "email": "1067408814@qq.com"
   },
   "homepage": "",
   "keywords": [
     "v-modal-hook",
     "vue3",
     "naive ui",
+    "dialog",
     "modal"
   ],
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
+    "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
