@@ -16,6 +16,11 @@ declare module "v-modal-hook" {
   };
 }
 
+declare module "v-modal-hook" {
+  const content: any;
+  export default content;
+}
+
 declare module "*.less" {
   const content: any;
   export default content;

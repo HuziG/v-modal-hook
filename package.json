@@ -1,7 +1,7 @@
 {
   "name": "v-modal-hook",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.0.6",
   "private": false,
   "description": "through modal to use modal",
   "author": {
@@ -16,9 +16,15 @@
     "dialog",
     "modal"
   ],
+  "main": "dist/v-modal-hook.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:types": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
+    "publish-pkg": "vite build && git push && git push --tags && npm publish && npm run deploy-docs",
     "preview": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"

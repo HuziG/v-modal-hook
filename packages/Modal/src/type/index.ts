@@ -4,16 +4,16 @@ import type { DialogOptions } from 'naive-ui/lib/dialog'
  * @description: 弹窗对外暴露的方法
  */
 export interface ModalMethods {
-  setProps: (props) => void
+  setProps: (props: ModalProps) => void
   openModal: () => void
   closeModal: () => void
-  setSubLoading: (status) => void
-  setSubDisabled: (status) => void
-  setModalLoading: (status) => void
+  setSubLoading: (status: boolean) => void
+  setSubDisabled: (status: boolean) => void
+  setModalLoading: (status: boolean) => void
   // 获取 modal 中的组件 ref
-  getInsideRef?: (status) => void
+  getInsideRef?: (status: any) => void
   // 获取当前修改的变量
-  getCurrentChangeValue?: (status) => void
+  getCurrentChangeValue?: (status: boolean) => void
 }
 
 /**
