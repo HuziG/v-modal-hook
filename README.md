@@ -12,7 +12,7 @@ About the npm url is here: [🌍 **demo**](https://www.npmjs.com/package/v-modal
 ## Installation
 
 ```bash
-npm install @vueuse/sound
+npm install v-modal-hook
 ```
 
 ## Examples
